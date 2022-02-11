@@ -1,4 +1,4 @@
-# Introduction
+# A. Introduction
 Tailwidcss est un framework de plus bas niveau que Bootstrap.
 - Dans Bootstrap, des composants sont prêts à être utilisés
 - dans tailwindcss, il faut tout créer à partir de classes utilitaires.
@@ -10,7 +10,7 @@ tailwindcss utilise en quelques sortes la méthodologie `atomic design`
 ## inconvénients
 - Il est très verbeux côté html.
 - Il est déroutant pour les adeptes du css dans une feuille de style
-# Installation
+# B. Installation
 1. Installer `nodejs` pour bénéficier de `npm` _(node package manager)_
 2. Eventuellement on peut commencer par un `npm init -y`
 3. Sinon ouvrir la documentation de tailwind et suivre les étapes.
