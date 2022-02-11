@@ -8,8 +8,8 @@ tailwindcss utilise en quelques sortes la méthodologie `atomic design`
 - bien customiser le style des éléments de page.
 - bien gérer la taille des fichiers ainsi que la compatibilité avec `postcss`
 ## inconvénients
-Il est très verbeux côté html.
-Il est déroutant pour les adeptes du css dans une feuille de style
+- Il est très verbeux côté html.
+- Il est déroutant pour les adeptes du css dans une feuille de style
 # Installation
 1. Installer `nodejs` pour bénéficier de `npm` _(node package manager)_
 2. Eventuellement on peut commencer par un `npm init -y`
@@ -22,7 +22,7 @@ Il est déroutant pour les adeptes du css dans une feuille de style
     - On va préférer `"./dist/**/*.{html,js}"`
 5. compilation automatique avec surveillance de changements
     - `npx tailwindcss -i ./src/input.css -o ./dist/css/output.css --watch`
-    -  le fichier `dist/ouput.css` est créé les classes de bases (reset)
+    -  le fichier `dist/ouput.css` est créé avec les classes de bases (reset)
 6. on peut créer le fichier `dist/index.html `et commencer à intégrer à l'aide de la doc
 ```html
 <head>
