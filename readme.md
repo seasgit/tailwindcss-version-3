@@ -11,6 +11,16 @@ tailwindcss utilise en quelques sortes la méthodologie `atomic design`
 - Il est très verbeux côté html.
 - Il est déroutant pour les adeptes du css dans une feuille de style
 # B. Installation
+## Installer la dépendance live-serve sur votre ordinateur
+```bash
+# voir la doc https://www.npmjs.com/package/live-server
+npm install -g live-server
+# on peut en ligen de commande choisir son browser
+live-server --browser=firefox
+# ou
+live-server dist/ --browser=firefox
+```
+## Installer tailwindcss
 1. Installer `nodejs` pour bénéficier de `npm` _(node package manager)_
 2. Eventuellement on peut commencer par un `npm init -y`
 3. Sinon ouvrir la documentation de tailwind et suivre les étapes.
@@ -20,10 +30,11 @@ tailwindcss utilise en quelques sortes la méthodologie `atomic design`
 4. petit changement
     - la doc propose de compiler depuis des fichiers dans src `"./src/**/*.{html,js}"`
     - On va préférer `"./dist/**/*.{html,js}"`
-5. compilation automatique avec surveillance de changements
+## Compiler
+1. compilation automatique avec surveillance de changements
     - `npx tailwindcss -i ./src/input.css -o ./dist/css/output.css --watch`
     -  le fichier `dist/ouput.css` est créé avec les classes de bases (reset)
-6. on peut créer le fichier `dist/index.html `et commencer à intégrer à l'aide de la doc
+2. on peut créer le fichier `dist/index.html `et commencer à intégrer à l'aide de la doc
 ```html
 <head>
     <meta charset="UTF-8">
@@ -36,12 +47,4 @@ tailwindcss utilise en quelques sortes la méthodologie `atomic design`
     <h1 class="text-8xl text-teal-500">Mon titre</h1>
 </body>
 ```
-## Installer la dépendance live-serve sur votre ordinateur
-```bash
-# voir la doc https://www.npmjs.com/package/live-server
-npm install -g live-server
-# on peut en ligen de commande choisir son browser
-live-server --browser=firefox
-# ou
-live-server dist/ --browser=firefox
-```
+3. Voir le fichier output.css. la classe `.text-teal-500 `a été ajoutée
