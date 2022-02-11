@@ -36,7 +36,7 @@ tailwindcss utilise en quelques sortes la méthodologie `atomic design`
     <h1 class="text-8xl text-teal-500">Mon titre</h1>
 </body>
 ```
-# Installer la dépendance live-serve sur votre ordinateur
+## Installer la dépendance live-serve sur votre ordinateur
 ```bash
 # voir la doc https://www.npmjs.com/package/live-server
 npm install -g live-server
