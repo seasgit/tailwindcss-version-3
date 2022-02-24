@@ -87,4 +87,30 @@ Essayons d'utiliser cette nouvelle classe dans le code html
 
 ```
 - Recompilation  : ` npx tailwindcss -i ./src/input.css -o ./dist/css/output.css --watch`
-## 
+## Etendre les couleurs
+Ajoutons une couleur nommée primary déclinée en 2 teintes
+```js
+module.exports = {
+  content: ["./dist/**/*.{html,js}"],
+  theme: {
+    extend: {
+      colors:{
+        primary:{
+          100:'#90be6d',
+          200:'#43aa8b'
+        }
+      },
+      fontSize: {
+      '10xl': ['9rem', { lineHeight: '1' }],
+    },
+    },
+  },
+  plugins: [],
+}
+
+```
+Essayons cette nouvelle classe dans le code html.
+```html
+<a href="" class="text-primary-100 hover:text-primary-200 text-2xl">Click here</a>
+
+```
