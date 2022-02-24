@@ -9,17 +9,24 @@ tailwindcss utilise en quelques sortes la méthodologie `atomic design`
 - bien gérer la taille des fichiers ainsi que la compatibilité avec `postcss`
 ## inconvénients
 - Il est très verbeux côté html.
-- Il est déroutant pour les adeptes du css dans une feuille de style
-# B. Installation
-## Installer la dépendance live-serve sur votre ordinateur
+- Il est déroutant pour les adeptes du css dans une feuille de style.
+#
+# B. Prise en main avec tailwind Playground
+[exo 1](https://play.tailwindcss.com/n5NvGaEP9g?size=656x793)  
+[exo 2](https://play.tailwindcss.com/FecFvIWkls?size=656x793)
+#
+# C. Installation
+## Installer la dépendance live-server sur votre ordinateur
 ```bash
 # voir la doc https://www.npmjs.com/package/live-server
 npm install -g live-server
-# on peut en ligen de commande choisir son browser
+# on peut en ligne de commande choisir son browser
 live-server --browser=firefox
-# ou
+# ou avec un dossier 
 live-server dist/ --browser=firefox
 ```
+## Extension dans visual studio code
+Installer `tailwindcss intellisense`
 ## Installer tailwindcss
 1. Installer `nodejs` pour bénéficier de `npm` _(node package manager)_
 2. Eventuellement on peut commencer par un `npm init -y`
@@ -48,3 +55,36 @@ live-server dist/ --browser=firefox
 </body>
 ```
 3. Voir le fichier output.css. la classe `.text-teal-500 `a été ajoutée
+
+#
+# D. Configuration
+## Default config
+- On peut obtenir le fichier de configuration par défaut en faisant `npx tailwindcss init --full tailwind.default.config.js`.
+- Mais on ne va pas le modifier, plutôt étendre son contenu an utilisant `tailwind.config.js` .
+## Etendre la config des font-size
+```js
+module.exports = {
+  content: ["./dist/**/*.{html,js}"],
+  theme: {
+    extend: {
+      fontSize: {
+      '10xl': ['9rem', { lineHeight: '1' }],
+    },
+    },
+  },
+  plugins: [],
+}
+```
+Essayons d'utiliser cette nouvelle classe dans le code html
+```html
+<!-- 
+    la classe n'apparaît pas dans la liste des classes d'autocomplétion.
+-->
+ <h1 class="text-teal-600 text-10xl">Hello world</h1>
+<!-- 
+    Mais une fois compilé ça marche. Utilisez l'inspecteur pour vérifier output.css
+-->
+
+```
+- Recompilation  : ` npx tailwindcss -i ./src/input.css -o ./dist/css/output.css --watch`
+## 
