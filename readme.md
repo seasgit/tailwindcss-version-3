@@ -114,3 +114,47 @@ Essayons cette nouvelle classe dans le code html.
 <a href="" class="text-primary-100 hover:text-primary-200 text-2xl">Click here</a>
 
 ```
+## classes dynamiques
+- On peut choisir une couleur et lui appliquer une opacité.
+- On peut choisir directement la couleur en hexadecimal par exemple.
+- __NB__ on peut imaginer un utilisation plus approndie en mixant ces techniques à JS (React, Vue)
+```html
+    <hr class="my-4">
+    <section class="w-40 h-40 border-2 grid place-content-center relative">
+        <h1 class="text-2xl text-[#c717aa]">I am here</h1>
+        <div class="absolute w-full h-full bg-amber-600/90 hover:bg-amber-600/50"></div>
+    </section>
+```
+## Créer nos classes personnalisées
+- Dans cet exemple, on constate les répétitions
+```html
+    <hr class="my-10">
+    <ul class="ml-10">
+        <li class=" font-sans text-slate-900 hover:text-slate-500 uppercase cursor-pointer">Lorem ipsum dolor amet consectetur.</li>
+        <li class=" font-sans text-slate-900 hover:text-slate-500 uppercase cursor-pointer">Laudantium  dolorem temporibus?</li>
+        <li class=" font-sans text-slate-900 hover:text-slate-500 uppercase cursor-pointer">Voluptatem ipsa, molestiae corporis!</li>
+        <li class=" font-sans text-slate-900 hover:text-slate-500 uppercase cursor-pointer">Assumenda laborum cum dolor.</li>
+    </ul>
+```
+Mais heureusement, on peut créer une classe de la façon suivante :
+```css
+/* dans output.css, on crée la classe qui va appliquer les classes tailwind */
+@layer components {
+
+    .item {
+        @apply font-sans text-slate-900 hover:text-slate-500 uppercase cursor-pointer;
+    }
+
+}
+
+```
+Puis dans la partie html
+```html
+    <ul class="ml-10">
+        <li class="item">Lorem ipsum dolor amet consectetur.</li>
+        <li class="item">Laudantium  dolorem temporibus?</li>
+        <li class="item">Voluptatem ipsa, molestiae corporis!</li>
+        <li class="item">Assumenda laborum cum dolor.</li>
+    </ul>
+```
+
