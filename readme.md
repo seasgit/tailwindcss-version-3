@@ -114,7 +114,7 @@ Essayons cette nouvelle classe dans le code html.
 <a href="" class="text-primary-100 hover:text-primary-200 text-2xl">Click here</a>
 
 ```
-## classes dynamiques
+# E. Classes dynamiques
 - On peut choisir une couleur et lui appliquer une opacité.
 - On peut choisir directement la couleur en hexadecimal par exemple.
 - __NB__ on peut imaginer un utilisation plus approndie en mixant ces techniques à JS (React, Vue)
@@ -125,7 +125,7 @@ Essayons cette nouvelle classe dans le code html.
         <div class="absolute w-full h-full bg-amber-600/90 hover:bg-amber-600/50"></div>
     </section>
 ```
-## Créer nos classes personnalisées
+## Classes personnalisées
 - Dans cet exemple, on constate les répétitions
 ```html
     <hr class="my-10">
