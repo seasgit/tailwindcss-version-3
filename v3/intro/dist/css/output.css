@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&display=swap');
+
 /*
 ! tailwindcss v3.0.21 | MIT License | https://tailwindcss.com
 */
@@ -423,7 +425,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-*, ::before, ::after {
+*, ::before, ::after{
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -468,7 +470,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
-.item {
+.item{
   cursor: pointer;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-transform: uppercase;
@@ -476,112 +478,98 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(15 23 42 / var(--tw-text-opacity));
 }
 
-.item:hover {
+.item:hover{
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
-.absolute {
+.absolute{
   position: absolute;
 }
 
-.relative {
+.relative{
   position: relative;
 }
 
-.my-10 {
+.my-10{
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
 
-.ml-10 {
+.ml-10{
   margin-left: 2.5rem;
 }
 
-.grid {
+.grid{
   display: grid;
 }
 
-.h-40 {
+.h-40{
   height: 10rem;
 }
 
-.h-full {
+.h-full{
   height: 100%;
 }
 
-.w-40 {
+.w-40{
   width: 10rem;
 }
 
-.w-full {
+.w-full{
   width: 100%;
 }
 
-.cursor-pointer {
-  cursor: pointer;
-}
-
-.place-content-center {
+.place-content-center{
   place-content: center;
 }
 
-.border-2 {
+.border-2{
   border-width: 2px;
 }
 
-.bg-amber-600\/90 {
+.bg-amber-600\/90{
   background-color: rgb(217 119 6 / 0.9);
 }
 
-.font-sans {
+.font-sans{
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.text-10xl {
+.font-archivo{
+  font-family: Archivo Narrow;
+}
+
+.text-10xl{
   font-size: 9rem;
   line-height: 1;
 }
 
-.text-2xl {
+.text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
-.uppercase {
-  text-transform: uppercase;
-}
-
-.text-teal-600 {
+.text-teal-600{
   --tw-text-opacity: 1;
   color: rgb(13 148 136 / var(--tw-text-opacity));
 }
 
-.text-primary-100 {
+.text-primary-100{
   --tw-text-opacity: 1;
   color: rgb(144 190 109 / var(--tw-text-opacity));
 }
 
-.text-\[\#c717aa\] {
+.text-\[\#c717aa\]{
   --tw-text-opacity: 1;
   color: rgb(199 23 170 / var(--tw-text-opacity));
 }
 
-.text-slate-900 {
-  --tw-text-opacity: 1;
-  color: rgb(15 23 42 / var(--tw-text-opacity));
-}
-
-.hover\:bg-amber-600\/50:hover {
+.hover\:bg-amber-600\/50:hover{
   background-color: rgb(217 119 6 / 0.5);
 }
 
-.hover\:text-primary-200:hover {
+.hover\:text-primary-200:hover{
   --tw-text-opacity: 1;
   color: rgb(67 170 139 / var(--tw-text-opacity));
-}
-
-.hover\:text-slate-500:hover {
-  --tw-text-opacity: 1;
-  color: rgb(100 116 139 / var(--tw-text-opacity));
 }

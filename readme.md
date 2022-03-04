@@ -157,4 +157,44 @@ Puis dans la partie html
         <li class="item">Assumenda laborum cum dolor.</li>
     </ul>
 ```
+#
+# F. Ajouter une police de caractères
+#
+## Exemple de police Google.
+Prenons la police `'Archivo Narrow'` que nous sélectionnons dans https://fonts.google.com/  
+Dans le fichier input.css, on insère l'import
+```css
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+
+/* ... suite */
+```
+Dans le fichier `tailwind.config.js` 
+```js
+module.exports = {
+  content: ["./dist/**/*.{html,js}"],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          100: '#90be6d',
+          200: '#43aa8b'
+        }
+      },
+      fontSize: {
+        '10xl': ['9rem', {
+          lineHeight: '1'
+        }],
+      },
+      fontFamily: {
+        'archivo': ['Archivo Narrow']
+      }
+    },
+  },
+  plugins: [],
+}
+```
+
+
 
