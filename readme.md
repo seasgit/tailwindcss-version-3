@@ -15,7 +15,7 @@ tailwindcss utilise en quelques sortes la méthodologie `atomic design`
 [exo 1](https://play.tailwindcss.com/n5NvGaEP9g?size=656x793)  
 [exo 2](https://play.tailwindcss.com/FecFvIWkls?size=656x793)
 #
-# C. Installation
+# C. VSCode Installations
 ## Installer la dépendance live-server sur votre ordinateur
 ```bash
 # voir la doc https://www.npmjs.com/package/live-server
@@ -25,45 +25,17 @@ live-server --browser=firefox
 # ou avec un dossier 
 live-server dist/ --browser=firefox
 ```
-## Extension dans visual studio code
+## Extension pour tailwind
 Installer `tailwindcss intellisense`
-## Installer tailwindcss
+
+# D. Installer tailwindcss méthode 1
 1. Installer `nodejs` pour bénéficier de `npm` _(node package manager)_
-2. Eventuellement on peut commencer par un `npm init -y`
-3. Sinon ouvrir la documentation de tailwind et suivre les étapes.
-    - installer comme dépendance : `npm install -D tailwindcss`
-    - installer le fichier de configuration `npx tailwindcss init`
-    - on crée le dossier css avec `input.css` et copier les 3 lignes suivantes : 
-    ```css
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
-    ```
-4. Pour la surveillance des changements que vous effectuez et la compilation du css,  
-   remplacer :`"./src/**/*.{html,js}"` par `"./dist/**/*.{html,js}"`
-## Compiler
-1. Voici la ligne de compilation automatique avec surveillance de changements
-    - `npx tailwindcss -i ./src/input.css -o ./dist/css/output.css --watch`
-    -  le fichier `dist/ouput.css` est créé avec les classes de bases (reset)
-2. on peut créer le fichier `dist/index.html `et commencer à intégrer à l'aide de la doc
+2. Suivez la documentation pour l'installation.
+3. pour la partie Configure your template paths,  
+- Remplacer `"./src/**/*.{html,js}"` par `"./dist/**/*.{html,js}"`
+- Le fichier html à surveiller sera dans un dossier à la racine, nommé dist.
 
-```html
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tailwindcss first</title>
-    <link rel="stylesheet" href="./css/output.css">
-</head>
-<body>
-    <h1 class="text-8xl text-teal-500">Mon titre</h1>
-</body>
-```
-3. Voir le fichier `output.css`, la classe `.text-teal-500 `a été ajoutée
-
-#
-# D. Configuration
-## script raccourci
+4. Commande de compilation raccourcie
 On peut placer la commande de compilation dans `package.json`.
 ```json
   "scripts": {
@@ -77,6 +49,31 @@ On peut ajouter aussi l'exécution dans un navigateur choisi
     "watch": "npx tailwindcss -i ./src/input.css -o ./dist/css/output.css --watch"
   },
 ```
+5. Créer le fichier ./dist/index.html
+- Essayez quelques intégrations de texte avec des classes de tailwindcss
+- Ouvrez le terminal et exécutez `npm run watch`
+#
+# E. Installation avec POSTCSS
+  > __NB :__  
+  >  La version 2 est plus riche car elle permet d'ajouter des plugins tel que l'autoprefixer.  
+## postcss cli
+1. Dans le terminal, tapez :  `npm i -g postcss-cli`, cela permet d'exécuter des commandes en ligne de postcss
+2. Créez un nouveau projet et exécuter dedans un `npm init -y` pour créer le `package.json`
+3. Suivez ensuite la procédure de la documentation.
+-  NB : Ajouter -p  à la cmd : `npx tailwindcss init -p`
+4. Puis dans package.json le script de raccourci devient ceci : 
+```js
+ "scripts": {
+    "dev": "postcss ./src/input.css -o ./dist/output.css --watch"
+  },
+```
+5. Créer le fichier ./dist/index.html
+- Essayez quelques intégrations de texte avec des classes de tailwindcss
+- Ouvrez le terminal et exécutez `npm run watch`
+
+
+#
+# F. Configuration
 ## Default config
 - On peut obtenir le fichier de configuration par défaut en faisant `npx tailwindcss init --full tailwind.default.config.js`.
 - Mais on ne va pas le modifier, plutôt étendre son contenu an utilisant `tailwind.config.js` .
@@ -107,7 +104,7 @@ Essayons d'utiliser cette nouvelle classe dans le code html
 ```
 - Recompilation  : ` npx tailwindcss -i ./src/input.css -o ./dist/css/output.css --watch`
 ## Etendre les couleurs
-Ajoutons une couleur nommée primary déclinée en 2 teintes
+Ajoutons une couleur nommée __primary__, déclinée en 2 teintes
 ```js
 module.exports = {
   content: ["./dist/**/*.{html,js}"],
@@ -136,7 +133,7 @@ Essayons cette nouvelle classe dans le code html.
 # E. Classes dynamiques
 - On peut choisir une couleur et lui appliquer une opacité.
 - On peut choisir directement la couleur en hexadecimal par exemple.
-- __NB__ on peut imaginer un utilisation plus approndie en mixant ces techniques à JS (React, Vue)
+- __NB__ on peut imaginer une utilisation plus approndie en mixant ces techniques à JS (React, Vue)
 ```html
     <hr class="my-4">
     <section class="w-40 h-40 border-2 grid place-content-center relative">
