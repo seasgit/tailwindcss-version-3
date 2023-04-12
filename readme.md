@@ -39,7 +39,8 @@ Installer `tailwindcss intellisense`
     @tailwind components;
     @tailwind utilities;
     ```
-4. Pour la surveillance des changements que vous effectuez et la compilation du css, remplacer `"./src/**/*.{html,js}"` par `"./dist/**/*.{html,js}"`
+4. Pour la surveillance des changements que vous effectuez et la compilation du css,  
+   remplacer :`"./src/**/*.{html,js}"` par `"./dist/**/*.{html,js}"`
 ## Compiler
 1. Voici la ligne de compilation automatique avec surveillance de changements
     - `npx tailwindcss -i ./src/input.css -o ./dist/css/output.css --watch`
