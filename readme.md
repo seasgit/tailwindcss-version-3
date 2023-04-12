@@ -33,15 +33,20 @@ Installer `tailwindcss intellisense`
 3. Sinon ouvrir la documentation de tailwind et suivre les étapes.
     - installer comme dépendance : `npm install -D tailwindcss`
     - installer le fichier de configuration `npx tailwindcss init`
-    - on crée le dossier css avec `input.css` et copier les 3 lignes
-4. petit changement
-    - la doc propose de compiler depuis des fichiers dans src `"./src/**/*.{html,js}"`
-    - On va préférer `"./dist/**/*.{html,js}"`
+    - on crée le dossier css avec `input.css` et copier les 3 lignes suivantes : 
+    ```css
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    ```
+4. Pour la surveillance des changements que vous effectués et la compilation du css,  
+    - Remplacer `"./src/**/*.{html,js}"` par `"./dist/**/*.{html,js}"`
 ## Compiler
-1. compilation automatique avec surveillance de changements
+1. Voici la ligne de compilation automatique avec surveillance de changements
     - `npx tailwindcss -i ./src/input.css -o ./dist/css/output.css --watch`
     -  le fichier `dist/ouput.css` est créé avec les classes de bases (reset)
 2. on peut créer le fichier `dist/index.html `et commencer à intégrer à l'aide de la doc
+
 ```html
 <head>
     <meta charset="UTF-8">
@@ -54,10 +59,24 @@ Installer `tailwindcss intellisense`
     <h1 class="text-8xl text-teal-500">Mon titre</h1>
 </body>
 ```
-3. Voir le fichier output.css. la classe `.text-teal-500 `a été ajoutée
+3. Voir le fichier `output.css`, la classe `.text-teal-500 `a été ajoutée
 
 #
 # D. Configuration
+## script raccourci
+On peut placer la commande de compilation dans `package.json`.
+```json
+  "scripts": {
+    "watch": "npx tailwindcss -i ./src/input.css -o ./dist/css/output.css --watch"
+  },
+```
+On peut ajouter aussi l'exécution dans un navigateur choisi
+```json
+  "scripts": {
+    "test": "live-server ./dist --browser=firefox",
+    "watch": "npx tailwindcss -i ./src/input.css -o ./dist/css/output.css --watch"
+  },
+```
 ## Default config
 - On peut obtenir le fichier de configuration par défaut en faisant `npx tailwindcss init --full tailwind.default.config.js`.
 - Mais on ne va pas le modifier, plutôt étendre son contenu an utilisant `tailwind.config.js` .
