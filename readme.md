@@ -130,7 +130,7 @@ Essayons cette nouvelle classe dans le code html.
 <a href="" class="text-primary-100 hover:text-primary-200 text-2xl">Click here</a>
 
 ```
-# E. Classes dynamiques
+# G. Classes dynamiques
 - On peut choisir une couleur et lui appliquer une opacité.
 - On peut choisir directement la couleur en hexadecimal par exemple.
 - __NB__ on peut imaginer une utilisation plus approndie en mixant ces techniques à JS (React, Vue)
@@ -174,7 +174,7 @@ Puis dans la partie html
     </ul>
 ```
 #
-# F. Ajouter une police de caractères
+# H. Ajouter une police de caractères
 #
 ## Exemple de police Google.
 Prenons la police `'Archivo Narrow'` que nous sélectionnons dans https://fonts.google.com/  
